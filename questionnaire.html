@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Questionnaire</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+	}
+</style>
+</head>
+<body>
+<form class="container">
+	<header>
+	<h1 style="text-align:center">Анкета</h1></header>
+	<fieldset>
+		<legend>Контактна інформація</legend>
+	<div><div class="text"><b>1. Введіть вашу електронну пошту:</b>
+		<br>
+		<label for="email"></label>
+		<input class="btn" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Введіть вашу електронну пошту" autocomplete="off" required>
+		<br><br>
+	<div><b>2. Введіть ваш пароль:</b></div>
+		<label for="password"></label>
+		<input class="btn" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" placeholder="Введіть ваш пароль" required>
+		<br><br>
+	<div><b>3. Введіть ваш номер телефону:</b></div>
+		<label for="tel"></label>
+		<input class="btn" type="tel" id="tel" name="tel" pattern="380[0-9]{3}[0-9]{3}[0-9]{3}" placeholder="Введіть ваш номер телефону" required>
+		<br><br>
+		<div><b>4. Введіть адресу вашої соціальної мережі (з https://):</b></div>
+		<label for="url"></label>
+		<input class="btn" type="url" id="url" name="url" pattern="http(s?)(:\/\/)((www.)?)(([^.]+)\.)?([a-zA-z0-9\-_]+)(.com|.net|.gov|.org|.in)(\/[^\s]*)?" placeholder="Введіть адресу вашої соціальної мережі" required>
+		</fieldset>
+		<br><br>
+		<fieldset>
+		<legend>Інформація про себе</legend>
+		<div><b>5. Оберіть вашу стать: </b></div>
+		<input type="radio" id="male" name="gender" value="male">
+		<label for="male">Чоловік</label><br>
+		<input type="radio" id="female" name="gender" value="female">
+		<label for="female">Жінка</label><br>
+		<input type="radio" id="other" name="gender" value="other">
+		<label for="other">Інше</label><br><br>
+		<div><b>6. Скільки вам років(від 18 до 45)?: </b></div>
+		<label for="age"></label>
+		<input type="number" id="age" name="age" min="18" max="45"><br><br>
+		<div><b>7. Наскільки ви себе можете оцінити в плані працьовитості?(від 1 до 10)?: </b></div>
+		<span>1 2 3 4 5 6 7 8 9 10</span><br>
+		<label for="hardworking"></label>
+		<input type="range" id="hardworking" name="hardworking" min="0" max="9"><br><br>
+		<div><b>8. Напишіть коротку інформацію про вас(макс. 100 символів): </b></div>
+		<textarea spellcheck="true" maxlength="100"></textarea>
+		</fieldset>
+		<br><br>
+		<fieldset>
+			<legend>Інформація про роботу</legend>
+		<div><b>9. З якого місяця ви працюєте на своїй роботі?: </b></div>
+		<label for="workmonth"></label>
+		<input type="month" id="workmonth" name="workmonth"><br><br>
+		<div><b>10. Коли був ваш перший робочий день?: </b></div>
+		<label for="workstart"></label>
+		<input type="date" id="workstart" name="workstart" min="2020-01-01" max="2020-12-31"><br><br>
+		<div><b>11. Якого тижня ви плануєте піти у відпустку?: </b></div>
+		<label for="vacation"></label>
+		<input type="week" id="vacation" name="vacation"><br><br>
+		<div><b>12. Наскільки ви задоволені своєю роботою?: </b></div>
+		<label for="satisfaction"></label>
+			<input list="satisfaction">
+   			<datalist id="satisfaction">
+    		<option value="Незадоволен-ий(а)"></option>
+    		<option value="Нейтрально"></option>
+    		<option value="Задоволен-ий(а)"></option>
+  		 </datalist><br><br>
+  		<div><b>13. Вкажіть, що з цього переліку вас невлаштовує на роботі?(можна вибрати декілька варіантів): </b></div>
+  		<label for="checkbox">
+		 <input type="checkbox" id="checkbox" name="checkbox">
+		 <span>Неприємні колеги</span>
+		 </label>
+		 <label for="checkbox2">
+			<input type="checkbox" id="checkbox2" name="checkbox">
+		 <span>Важкі нагрузки</span>	
+		 </label>
+		 <label for="checkbox3">
+		 	<input type="checkbox" id="checkbox3" name="checkbox">
+		 <span>Погані умови праці</span>
+		 </label>
+		 <label for="checkbox4">
+		 	<input type="checkbox" id="checkbox4" name="checkbox">
+		 <span>Ставлення керівництва</span>
+		 </label>
+		 <label for="checkbox5">
+			<input type="checkbox" id="checkbox5" name="checkbox">
+		 <span>Нічого з переліченого вище</span>	
+		 </label>
+		</fieldset><br><br>
+		<fieldset>
+			<legend>Відпочинок</legend>
+			<div><b>14. Як часто ви відпочиваєте?: </b></div>
+			<input type="radio" id="once" name="relaxation" value="once">
+			<label for="once">Раз на місяць</label><br>
+			<input type="radio" id="thrice" name="relaxation" value="thrice">
+			<label for="thrice">Три рази на місяць</label><br>
+			<input type="radio" id="five" name="relaxation" value="five">
+			<label for="five">П'ять раз і більше</label><br><br>
+			<div><b>15. Ваш улюблений спосіб відпочинку?: </b></div>
+			<label for="act">
+		 	<input type="checkbox" id="act" name="checkbox">
+		 	<span>Відпочинок на природі</span>
+		 	</label>
+		 	<label for="act2">
+			<input type="checkbox" id="act2" name="checkbox">
+		 	<span>Активні ігри</span>	
+		 	</label>
+		 	<label for="act3">
+		 	<input type="checkbox" id="act3" name="checkbox">
+		 	<span>Перегляд фільмів</span>
+		 	</label>
+		 	<label for="act4">
+		 	<input type="checkbox" id="act4" name="checkbox">
+		 	<span>Читання книг</span>
+		 	</label>
+		 	<label for="act5">
+			<input type="checkbox" id="act5" name="checkbox">
+		 	<span>Приділяти час своєму хоббі	</span>	
+		 </label><br><br>
+		</fieldset>
+		<center>
+		<label for="submit"></label>
+		<input type="submit" value="Відправити">
+		<label for="reset"></label>
+		<input type="reset" value="Очистити">
+	</center>
+</div>
+</div>
+		
+</form>
+<form class="bottom-container">
+		<fieldset>
+		<legend>Про нас</legend>
+			<p>2021 рік загрузився на: </p>
+			<label for="progress"></label>
+			<progress class="progress" value="80" max="100"></progress><br><br>
+			<label for="users">Нагруженість наших серверів:</label><br>
+			<meter id="users" value="6" min="0" max="10">60% нагрузки</meter><br>
+			<p>Ми працюємо з <time>10:00</time> по <time>20:00</time> кожного дня.</p>
+			<p>Компанія закривається раніше у <time datetime="2020-12-31 14:00">день Нового Року</time>.</p>
+			<label for="search"></label>
+			<p><input type="search" name="search" placeholder="Пошук по сайту"> 
+   			<button>Знайти</button></p>
+			<a class="link" href="https://www.instagram.com">Ми в Instagram</a>
+		</fieldset>
+		</form>
+</body>
+</html>
